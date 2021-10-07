@@ -137,7 +137,7 @@ def remove_vowels(user_string):
 #        - First Name will become first_name
 #        - % Completed will become completed
 
-# In[105]:
+# In[193]:
 
 
 def normalize_name(non_normal_name):
@@ -155,6 +155,10 @@ def normalize_name(non_normal_name):
             normalized_name += '_'
         elif i.isalnum(): #elif i in 'abcdefghijklmnopqrstuvwxyz1234567890':
             normalized_name += i
+            
+    #Now check to make sure the final product is not a python keyword
+    if normalized_name in keyword.kwlist:
+        return("Error: Using a python keyword is not permitted.")
     return(normalized_name)
 
 
